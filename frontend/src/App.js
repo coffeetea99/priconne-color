@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import IndexPage from './pages/IndexPage/IndexPage';
 import MainPage from './pages/MainPage/MainPage';
+import RankingPage from './pages/RankingPage/RankingPage';
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <Switch>
       <Route path="/index" exact component={IndexPage}/>
       <Route path="/main" exact component={MainPage}/>
+      <Route path="/ranking" exact component={RankingPage}/>
       <Redirect exact from="" to="/index"/> 
     </Switch>
   );
