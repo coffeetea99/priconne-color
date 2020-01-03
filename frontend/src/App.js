@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import IndexPage from './pages/IndexPage/IndexPage';
+import MainPage from './pages/MainPage/MainPage';
 import './App.css';
 
 function App() {
+
+  const router = (
+    <Switch>
+      <Route path="/index" exact component={IndexPage}/>
+      <Route path="/main" exact component={MainPage}/>
+      <Redirect exact from="" to="/index"/> 
+    </Switch>
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        {router}
+      </div>
+    </BrowserRouter>
   );
 }
 
