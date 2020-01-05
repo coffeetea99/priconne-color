@@ -12,7 +12,7 @@ import './IndexPage.css';
 const IndexPage = () => {
   const history = useHistory();
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);    //설명 창이 떠 있냐 아니냐
 
   return (
     <Container>

@@ -3,7 +3,7 @@ import React from 'react';
 const RankingPage = () => {
   return (
     <div>
-      Ranking Page
+      Sorry, ranking page isn't ready yet.
     </div>
   )
 }

@@ -1,8 +1,12 @@
-
 .question
 {
     position: static;
     margin: auto;
     margin-top: 30px;
     border-radius: 5px;
+}
+
+.form-group{
+    width: 400px;
+    margin: auto;
 }

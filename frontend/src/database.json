@@ -1,0 +1,277 @@
+[
+	{
+		"name": "페코린느",
+		"color": "#f8b36b",
+		"guild": "미식전"
+	},
+	{
+		"name": "콧코로",
+		"color": "#ebe6ea",
+		"guild": "미식전"
+	},
+	{
+		"name": "캬루",
+		"color": "#6c6472",
+		"guild": "미식전"
+	},
+	{
+		"name": "유이",
+		"color": "#fabec2",
+		"guild": "트윙클 위시"
+	},
+	{
+		"name": "레이",
+		"color": "#7277b9",
+		"guild": "트윙클 위시"
+	},
+	{
+		"name": "히요리",
+		"color": "#ffc873",
+		"guild": "트윙클 위시"
+	},
+	{
+		"name": "시즈루",
+		"color": "#d9bcdb",
+		"guild": "라비린스"
+	},
+	{
+		"name": "리노",
+		"color": "#f3ae8a",
+		"guild": "라비린스"
+	},
+	{
+		"name": "노조미",
+		"color": "#edb58f",
+		"guild": "카르미나"
+	},
+	{
+		"name": "치카",
+		"color": "#c5f3d2",
+		"guild": "카르미나"
+	},
+	{
+		"name": "츠무기",
+		"color": "#ffd2cb",
+		"guild": "카르미나"
+	},
+	{
+		"name": "미미",
+		"color": "#ffaead",
+		"guild": "리틀 리리컬"
+	},
+	{
+		"name": "미소기",
+		"color": "#ec9469",
+		"guild": "리틀 리리컬"
+	},
+	{
+		"name": "쿄우카",
+		"color": "#f8d6ee",
+		"guild": "리틀 리리컬"
+	},
+	{
+		"name": "미사토",
+		"color": "#d46e6e",
+		"guild": "포레스티에"
+	},
+	{
+		"name": "아오이",
+		"color": "#ffffe8",
+		"guild": "포레스티에"
+	},
+	{
+		"name": "하츠네",
+		"color": "#ffd0d0",
+		"guild": "포레스티에"
+	},
+	{
+		"name": "이리야",
+		"color": "#514d57",
+		"guild": "악마왕국군(디아볼로스)"
+	},
+	{
+		"name": "요리",
+		"color": "#ddd5d6",
+		"guild": "악마왕국군(디아볼로스)"
+	},
+	{
+		"name": "아카리",
+		"color": "#ddd5d6",
+		"guild": "악마왕국군(디아볼로스)"
+	},
+	{
+		"name": "시노부",
+		"color": "#9773aa",
+		"guild": "악마왕국군(디아볼로스)"
+	},
+	{
+		"name": "미야코",
+		"color": "#d6efec",
+		"guild": "악마왕국군(디아볼로스)"
+	},
+	{
+		"name": "쥰",
+		"color": "#7a7686",
+		"guild": "왕궁기사단(나이트메어)"
+	},
+	{
+		"name": "크리스티나",
+		"color": "#efd885",
+		"guild": "왕궁기사단(나이트메어)"
+	},
+	{
+		"name": "토모",
+		"color": "#e3dbd8",
+		"guild": "왕궁기사단(나이트메어)"
+	},
+	{
+		"name": "마츠리",
+		"color": "#ffdfa0",
+		"guild": "왕궁기사단(나이트메어)"
+	},
+	{
+		"name": "사렌",
+		"color": "#faebc9",
+		"guild": "사렌디라 구호원"
+	},
+	{
+		"name": "스즈메",
+		"color": "#906f46",
+		"guild": "사렌디라 구호원"
+	},
+	{
+		"name": "아야네",
+		"color": "#e27f8f",
+		"guild": "사렌디라 구호원"
+	},
+	{
+		"name": "쿠루미",
+		"color": "#d4887b",
+		"guild": "사렌디라 구호원"
+	},
+	{
+		"name": "마호",
+		"color": "#e7c6b7",
+		"guild": "자경단(카온)"
+	},
+	{
+		"name": "마코토",
+		"color": "#9375ad",
+		"guild": "자경단(카온)"
+	},
+	{
+		"name": "카오리",
+		"color": "#8a6353",
+		"guild": "자경단(카온)"
+	},
+	{
+		"name": "마히루",
+		"color": "#88cbe0",
+		"guild": "목장(엘리자베스 파크)"
+	},
+	{
+		"name": "리마",
+		"color": "#f6f1e5",
+		"guild": "목장(엘리자베스 파크)"
+	},
+	{
+		"name": "시오리",
+		"color": "#6e657b",
+		"guild": "목장(엘리자베스 파크)"
+	},
+	{
+		"name": "린",
+		"color": "#a9786d",
+		"guild": "목장(엘리자베스 파크)"
+	},
+	{
+		"name": "아키노",
+		"color": "#f17775",
+		"guild": "메르쿠리우스 재단"
+	},
+	{
+		"name": "미후유",
+		"color": "#897fbc",
+		"guild": "메르쿠리우스 재단"
+	},
+	{
+		"name": "유카리",
+		"color": "#feebbd",
+		"guild": "메르쿠리우스 재단"
+	},
+	{
+		"name": "타마키",
+		"color": "#be6d88",
+		"guild": "메르쿠리우스 재단"
+	},
+	{
+		"name": "루카",
+		"color": "#703b5c",
+		"guild": "트와일라이트 캐러밴"
+	},
+	{
+		"name": "미츠키",
+		"color": "#d8abe1",
+		"guild": "트와일라이트 캐러밴"
+	},
+	{
+		"name": "에리코",
+		"color": "#64464a",
+		"guild": "트와일라이트 캐러밴"
+	},
+	{
+		"name": "나나카",
+		"color": "#8c5d88",
+		"guild": "트와일라이트 캐러밴"
+	},
+	{
+		"name": "안나",
+		"color": "#b0dadd",
+		"guild": "트와일라이트 캐러밴"
+	},
+	{
+		"name": "이오",
+		"color": "#fd8491",
+		"guild": "루센트 학원"
+	},
+	{
+		"name": "미사키",
+		"color": "#ae6fb2",
+		"guild": "루센트 학원"
+	},
+	{
+		"name": "스즈나",
+		"color": "#ffc6b7",
+		"guild": "루센트 학원"
+	},
+	{
+		"name": "모니카",
+		"color": "#ffe8ab",
+		"guild": "바이스플뤼겔 랜드솔 지부"
+	},
+	{
+		"name": "유키",
+		"color": "#faebdd",
+		"guild": "바이스플뤼겔 랜드솔 지부"
+	},
+	{
+		"name": "니논",
+		"color": "#ffd989",
+		"guild": "바이스플뤼겔 랜드솔 지부"
+	},
+	{
+		"name": "쿠우카",
+		"color": "#eb7b8f",
+		"guild": "바이스플뤼겔 랜드솔 지부"
+	},
+	{
+		"name": "지타",
+		"color": "#ffe7c3",
+		"guild": "???"
+	},
+	{
+		"name": "아리사",
+		"color": "#e5a8a3",
+		"guild": "???"
+	}
+]
