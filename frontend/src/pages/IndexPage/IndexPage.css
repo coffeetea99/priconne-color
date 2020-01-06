@@ -6,3 +6,7 @@ img{
 .buttons button{
     margin: 10px 10px;
 }
+
+.modal-dialog {
+    max-width: 600px !important;
+}

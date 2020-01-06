@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+
 import Button from 'react-bootstrap/Button'
-import logo from '../../logo.png';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
-import './IndexPage.css';
+import Modal from 'react-bootstrap/Modal'
 
+import './IndexPage.css';
+import logo from '../../logo.png';
 
 const IndexPage = () => {
   const history = useHistory();
@@ -15,21 +17,46 @@ const IndexPage = () => {
   const [show, setShow] = useState(false);    //설명 창이 떠 있냐 아니냐
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Image className="logo" src={logo} rounded/>
-        </Col>
-      </Row>
-      <h1>프리코네 머리카락 색상 퀴즈</h1>
-      <div className="buttons">
-        <Button variant="primary" onClick={() => history.push('/main')}>시작하기</Button>
-        <Button variant="secondary">설명</Button>
-        <Button variant="success" onClick={() => history.push('/ranking')}>랭킹</Button>
-      </div>
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <Image className="logo" src={logo} rounded />
+          </Col>
+        </Row>
+        <h1>프리코네 머리카락 색깔 퀴즈</h1>
+        <div className="buttons">
+          <Button variant="primary" onClick={() => history.push('/main')}>시작하기</Button>
+          <Button variant="secondary" onClick={()=>setShow(true)}>설명</Button>
+          <Button variant="success" onClick={() => history.push('/ranking')}>랭킹</Button>
+        </div>
+      </Container>
 
-    </Container>
-
+      <Modal show={show} onHide={()=>setShow(false)}>
+        <Modal.Header>
+          <Modal.Title>
+            프리코네 머리카락 색깔 퀴즈
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h5>플레이 방법</h5><br/>
+          프리코네 캐릭터 중 누군가의 머리카락 색깔이 주어집니다.<br/>
+          해당하는 캐릭터의 이름을 입력 창에 적고 enter를 누르면 됩니다.<br/>
+          캐릭터 풀은 <b>한국서버 통상 캐릭터</b> 기준입니다.
+        </Modal.Body>
+        <Modal.Body>
+          <h5>참고사항</h5><br/>
+          한 번 등장한 캐릭터가 또 등장할 수 있습니다.<br/>
+          쥰은 갑옷 색깔입니다.<br/>
+          아카리와 요리는 색깔이 동일합니다. 둘 중 아무나 입력해도 됩니다.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={()=>setShow(false)}>
+            닫기
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   )
 }
 
