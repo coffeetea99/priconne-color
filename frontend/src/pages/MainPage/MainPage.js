@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 
 import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 import './MainPage.css';
-import database from '../../db/character.json';
+import characterDB from '../../db/character.json';
+
 
 const MainPage = () => {
-  const data = database;
+  const history = useHistory();
+
+  const data = characterDB;
   const length = data.length;
 
   const [score, setScore] = useState(0);                                      //현재 점수
@@ -16,6 +23,7 @@ const MainPage = () => {
   const [description, setDescription] = useState("이 캐릭터는 누구일까요?");    //현재 상태(첫째 줄)
   const [hint, setHint] = useState("-");                                      //힌트 메시지(둘째 줄)
   const [answer, setAnswer] = useState("");                                   //유저가 입력한 정답
+  const [time, setTime] = useState(100);                                      //남은 시간(초)
 
   function shuffle(){
     var i = Math.floor(Math.random() * length);
@@ -25,9 +33,22 @@ const MainPage = () => {
     //console.log(data[i].name, data[i].color);
   }
 
-  useEffect(() => {
+  useEffect(()=>{
     shuffle();
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(()=>{
+      setTime(time => time-1);
+      if ( time === 0 ) {
+        history.push({
+          pathname: '/result',
+          state: { score: score }
+        })
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [time, score]);
 
   const similar = (answer) => {
     const find = data.find(character => character.name === answer);
@@ -56,6 +77,8 @@ const MainPage = () => {
     }
   }
 
+  
+
   const handleSubmit = event => {
     event.preventDefault();
     if (answer === curName || (answer === "아카리" && curName === "요리") || (answer === "요리" && curName === "아카리")) {
@@ -78,17 +101,30 @@ const MainPage = () => {
   }
 
   return (
-    <div>
-      <div className="question" style={{ width: "270px", height: "360px", backgroundColor: curColor, }}>
-        <h1 className="counter"></h1>
-      </div>
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <h3 id="score">점수: {score}</h3>
+          </Col>
+          <Col md="6">
+            <div className="question" style={{ width: "270px", height: "360px", backgroundColor: curColor, }}>
+              {/*<h1 className="counter">countdown</h1>*/}
+            </div>
+          </Col>
+          <Col>
+          <h3 id="time-left">남은 시간: {time}초</h3>
+          </Col>
+        </Row>
+      </Container>
+
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="answer">
+        <Form.Group>
           <Form.Label>{description}<br/>{hint}</Form.Label>
-          <Form.Control size="lg" type="string" placeholder="정답" value={answer} onChange={(event)=>setAnswer(event.target.value)} autoFocus={true}/>
+          <Form.Control id="answer" size="lg" type="string" placeholder="정답" value={answer} onChange={(event)=>setAnswer(event.target.value)} autoFocus={true}/>
         </Form.Group>
       </Form>
-    </div>
+    </>
   )
 }
 
