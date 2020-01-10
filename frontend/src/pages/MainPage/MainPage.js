@@ -9,7 +9,6 @@ import Col from 'react-bootstrap/Col'
 import './MainPage.css';
 import characterDB from '../../db/character.json';
 
-
 const MainPage = () => {
   const history = useHistory();
 
