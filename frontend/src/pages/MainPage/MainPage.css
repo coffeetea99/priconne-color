@@ -5,9 +5,8 @@
     border-radius: 5px;
 }
 
-.form-group {
+.form-control {
     width: 400px;
-    margin: auto;
 }
 
 #score, #time-left{
