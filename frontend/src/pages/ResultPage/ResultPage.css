@@ -1,5 +1,10 @@
-#score {
+#final-score {
     margin-top: 20px;
+}
+
+#picture {
+    height:400px;
+    width: auto;
 }
 
 .buttons button{

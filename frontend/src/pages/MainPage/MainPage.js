@@ -22,7 +22,7 @@ const MainPage = () => {
   const [description, setDescription] = useState("이 캐릭터는 누구일까요?");    //현재 상태(첫째 줄)
   const [hint, setHint] = useState("-");                                      //힌트 메시지(둘째 줄)
   const [answer, setAnswer] = useState("");                                   //유저가 입력한 정답
-  const [time, setTime] = useState(10);                                      //남은 시간(초)
+  const [time, setTime] = useState(100);                                      //남은 시간(초)
 
   function shuffle(){
     var i = Math.floor(Math.random() * length);
@@ -112,15 +112,15 @@ const MainPage = () => {
             </div>
           </Col>
           <Col>
-          <h3 id="time-left">남은 시간: {time}초</h3>
+            <h3 id="time-left">남은 시간: {time}초</h3>
           </Col>
         </Row>
       </Container>
 
       <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Label>{description}<br/>{hint}</Form.Label>
-          <Form.Control id="answer" size="lg" type="string" placeholder="정답" value={answer} onChange={(event)=>setAnswer(event.target.value)} autoFocus={true}/>
+          <Form.Label>{description}<br />{hint}</Form.Label>
+          <Form.Control id="answer" size="lg" type="string" placeholder="정답" value={answer} onChange={(event) => setAnswer(event.target.value)} autoFocus={true} />
         </Form.Group>
       </Form>
     </>

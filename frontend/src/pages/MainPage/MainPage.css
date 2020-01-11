@@ -5,10 +5,15 @@
     border-radius: 5px;
 }
 
-.form-control {
+.form-group {
     width: 400px;
+    margin: auto;
 }
 
-#score, #time-left{
+#score{
+    margin-top: 180px;
+}
+
+#time-left{
     margin-top: 180px;
 }

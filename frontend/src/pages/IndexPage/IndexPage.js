@@ -28,7 +28,6 @@ const IndexPage = () => {
         <div className="buttons">
           <Button variant="primary" onClick={() => history.push('/main')}>시작하기</Button>
           <Button variant="secondary" onClick={()=>setShow(true)}>설명</Button>
-          <Button variant="success" onClick={() => history.push('/ranking')}>랭킹</Button>
         </div>
       </Container>
 
@@ -44,7 +43,8 @@ const IndexPage = () => {
           해당하는 캐릭터의 이름을 입력 창에 적고 enter를 누르면 됩니다.<br/>
           캐릭터 풀은 <b>한국서버 통상 캐릭터</b> 기준입니다.<br/>
           색깔의 기준은 <b>스탠딩 CG(2성 이하 일러), 앞머리, 그림자 없음</b>입니다.<br/>
-          틀렸지만 색깔이 비슷한 캐릭터를 입력한 경우, 힌트로 소속 길드를 알려줍니다.
+          틀렸지만 색깔이 비슷한 캐릭터를 입력한 경우, 힌트로 <b>소속 길드</b>를 알려줍니다.<br/>
+          100초 동안 가장 많은 캐릭어를 맞히면 됩니다.
         </Modal.Body>
         <Modal.Body>
           <h5>참고사항</h5><br/>

@@ -1,37 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
 
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form'
 
-import rankingDB from '../../db/ranking.json';
-import kokoro from './kokoro.png';
 import './ResultPage.css';
+import kokoro from './kokoro.png';
+import good from '../../db/result/good.png';
+import normal from '../../db/result/normal.png';
+import bad from '../../db/result/bad.png';
 
 const ResultPage = (props) => {
   const history = useHistory();
   const score = props.location.state.score;
-
-  const [currentRanking, setCurrentRanking] = useState(0);
-  const [tie, setTie] = useState(false);
-
-  const [name, setName] = useState("")
-
-  useEffect(()=>{
-    var temp = 1;
-    rankingDB.forEach(element => {
-      if ( element.score > score ) {
-        temp = temp + 1;
-      } else if ( element.score === score ) {
-        setTie(true);
-      }
-    });
-    setCurrentRanking(temp);
-  }, [currentRanking, tie]);
-
-  const handleSubmit = event => {
-    //구현되지 않음
-  }
 
   return (
     props.location.state === undefined ?
@@ -41,25 +21,17 @@ const ResultPage = (props) => {
       </>
       :
       <>
-        <h3 id="score">점수: {score}점</h3>
-        <h3>현재 {tie && "공동 "}{currentRanking}등</h3>
-        <div id="submit">
-          <Form onSubmit={handleSubmit}>
-            <Form.Group>
-              <Form.Label>이름을 입력하면 랭킹에 등록할 수 있습니다.</Form.Label>
-              <Form.Control type="string" placeholder="이름" value={name} onChange={(event)=>setName(event.target.value)} autoFocus={true}></Form.Control>
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              랭킹 등록
-            </Button>
-          </Form>
-        </div>
+        <h3 id="final-score">점수: {score}점</h3>
+        {(score < 9) && <img id="picture" src={bad} />}
+        {(9 <= score && score < 20) && <img id="picture" src={normal} />}
+        {(20 <= score) && <img id="picture" src={good} />}
         <div className="buttons">
-          <Button variant="info" onClick={()=>history.push('/index')}>메인 메뉴</Button>
-          <Button variant="success" onClick={() => history.push('/ranking')}>랭킹 확인</Button>
-      </div>
-    </>
+          <Button variant="primary" onClick={() => history.push('/main')}>재도전</Button>
+          <Button variant="info" onClick={() => history.push('/index')}>메인 메뉴</Button>
+        </div>
+      </>
   )
+
 }
 
 export default ResultPage;
