@@ -25,7 +25,7 @@ const MainPage = () => {
   const [time, setTime] = useState(100);                                      //남은 시간(초)
 
   function shuffle(){
-    var i = Math.floor(Math.random() * length);
+    const i = Math.floor(Math.random() * length);
     setCurName(data[i].name);
     setCurColor(data[i].color);
     setCurGuild(data[i].guild);
@@ -34,7 +34,8 @@ const MainPage = () => {
 
   useEffect(()=>{
     shuffle();
-  }, []);
+    // eslint-disable-next-line
+  }, [data, length]);
 
   useEffect(() => {
     const interval = setInterval(()=>{
@@ -47,7 +48,7 @@ const MainPage = () => {
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, [time, score]);
+  }, [time, score, history]);
 
   const similar = (answer) => {
     const find = data.find(character => character.name === answer);
