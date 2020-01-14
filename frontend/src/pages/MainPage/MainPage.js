@@ -22,7 +22,7 @@ const MainPage = () => {
   const [description, setDescription] = useState("이 캐릭터는 누구일까요?");    //현재 상태(첫째 줄)
   const [hint, setHint] = useState("-");                                      //힌트 메시지(둘째 줄)
   const [answer, setAnswer] = useState("");                                   //유저가 입력한 정답
-  const [time, setTime] = useState(100);                                      //남은 시간(초)
+  const [time, setTime] = useState(120);                                      //남은 시간(초)
 
   function shuffle(){
     const i = Math.floor(Math.random() * length);
@@ -40,7 +40,7 @@ const MainPage = () => {
   useEffect(() => {
     const interval = setInterval(()=>{
       setTime(time => time-1);
-      if ( time === 0 ) {
+      if ( Number(time) <= 0 ) {
         history.push({
           pathname: '/result',
           state: { score: score }
@@ -77,11 +77,16 @@ const MainPage = () => {
     }
   }
 
-  
-
   const handleSubmit = event => {
     event.preventDefault();
-    if (answer === curName || (answer === "아카리" && curName === "요리") || (answer === "요리" && curName === "아카리")) {
+    if (answer === "") {
+      //모르겠다
+      setDescription(`정답은 ${curName}였습니다!`);
+      setHint("-");
+      setTime(time < 10 ? 0 : time-10);
+      shuffle();
+    }
+    else if (answer === curName || (answer === "아카리" && curName === "요리") || (answer === "요리" && curName === "아카리")) {
       //정답!
       setScore(score + 1);
       setDescription("맞았습니다!");
@@ -90,6 +95,7 @@ const MainPage = () => {
       shuffle();
     } else {
       //틀렸습니다!
+      setTime(time-1);
       setDescription(`${answer}가 아닙니다!`);
       const curGuild = similar(answer);
       if ( curGuild !== "" && hint === "-") {
@@ -121,7 +127,7 @@ const MainPage = () => {
       <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Form.Label>{description}<br />{hint}</Form.Label>
-          <Form.Control id="answer" size="lg" type="string" placeholder="정답" value={answer} onChange={(event) => setAnswer(event.target.value)} autoFocus={true} />
+          <Form.Control id="answer" size="lg" type="string" placeholder="빈 칸에 enter => 패스" value={answer} onChange={(event) => setAnswer(event.target.value)} autoFocus={true} />
         </Form.Group>
       </Form>
     </>
