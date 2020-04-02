@@ -7,3 +7,4 @@
 
 ## Frontend
 - React
+- Docker
